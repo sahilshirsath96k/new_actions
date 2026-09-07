@@ -1,0 +1,23 @@
+name: file2
+on: push
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      
+      matrix:
+        os:
+          - ubuntu
+          - windows
+          - macos
+        node: ["18", "19", "20"]
+        exclude:
+          -  os: macos
+             node: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --version
+      
