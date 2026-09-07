@@ -5,10 +5,12 @@ on: push
 jobs:
   build:
     env:
+      TOKEN: ${{ secrets.NEW_SEC }}
       hello1: vrushank
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
+      - run: echo "lenght of token= ${#TOKEN}"
       - run: echo " App is builing $hello $hello1"
       - run: 'echo "repo = ${{ github.repository }}"'
       - run: 'echo "actor = ${{ github.actor }}"'
