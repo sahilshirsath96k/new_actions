@@ -9,10 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
-        env:
-          hello2: vishal 
-      - run: echo " App is builing $hello $hello1 $hello2 "
-
+      - run: echo " App is builing $hello $hello1"
+      - run: 'echo "repo = ${{ github.repository }}"'
+      - run: 'echo "actor = ${{ github.actor }}"'
+      - run: 'echo "Branch = ${{ github.ref_name }}"'
+      - run: 'echo "SHA = ${{ github.sha }}"'
+      
   # test:
   #   needs: build
   #   runs-on: ubuntu-latest
