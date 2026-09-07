@@ -7,9 +7,9 @@ jobs:
       
       matrix:
         os:
-          - ubuntu
-          - windows
-          - macos
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
         node: ["18"]
         exclude:
           -  os: macos
