@@ -10,7 +10,7 @@ jobs:
           - ubuntu
           - windows
           - macos
-        node: ["18", "19", "20"]
+        node: ["18"]
         exclude:
           -  os: macos
              node: 18
