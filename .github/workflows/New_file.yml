@@ -10,8 +10,8 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
         env:
-          hello2: Vishal 
-      - run: echo "App is builing $hello $hello1 $hello2"
+          hello2: vishal 
+      - run: echo " App is builing $hello $hello1 $hello2 "
 
   # test:
   #   needs: build
