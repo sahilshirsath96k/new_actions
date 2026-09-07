@@ -1,23 +1,28 @@
 name: CI
-
+env:
+  hello: sahil
 on: push
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "App is builing"
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "Test the app"
-
-  deploy:
-    needs: test
+    env:
+      hello1: vrushank
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
+        env:
+          hello2: Vishal 
+      - run: echo "App is builing $hello $hello1 $hello3"
+
+  # test:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - run: echo "Test the app"
+
+  # deploy:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps: 
+  #     - uses: actions/checkout@v4
       - run: echo "Deploying the application"
