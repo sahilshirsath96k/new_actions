@@ -1,11 +1,6 @@
 name: cicd
 on: [push, pull_request]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install the npm
-        run: npm install
       
   Test:
     runs-on: ubuntu-latest
