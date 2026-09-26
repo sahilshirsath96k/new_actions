@@ -3,22 +3,13 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['20', '22']
     steps:
       - uses: actions/checkout@v4
+        with:
+          node-version: ${{ matrix.node }}
       - run: echo "hello"
       - run: ls -la
       
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Testing"
-      
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Token
-        env: 
-          TOKEN: ${{ secrets.DEPLOY_TOKEN }}          
-        run: echo 'Deploying the app'
