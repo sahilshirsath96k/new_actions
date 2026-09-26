@@ -18,4 +18,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'Deploying the app'
+      - name: Token
+        env: 
+          TOKEN: ${{ secrets.DEPLOY_TOKEN }}          
+        run: echo 'Deploying the app'
